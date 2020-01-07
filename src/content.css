@@ -1,0 +1,515 @@
+@font-face {
+	font-family: 'Avenir';
+	src: url(../fonts/AvenirLTStd-Book.otf);
+}
+
+/* navbar */
+.nav a{
+    color: black;
+    font-family: Avenir,sans-serif;
+    padding: 10px;
+}
+
+.nav a:hover{
+    background-color: #121536;
+    color: white;
+}
+
+
+
+.invert-colors {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+}
+.need-invert {
+    transition: filter .5s ease,-webkit-filter .5s ease;
+}
+.fly-top-right-buttons {
+    font-size: .8em;
+    position: fixed;
+    right: 72px;
+    top: 37px;
+    transform: translateY(-50%);
+    z-index: 2
+}
+
+.fly-left-right-buttons {
+    font-size: 2em;
+    position: fixed;
+    left: 72px;
+    top: 37px;
+    transform: translateY(-50%);
+    z-index: 2
+}
+
+/* timer */
+
+.countbox{
+    z-index: 10;
+    left: 50%;
+    top: 70%;
+    font-family: 'Avenir';
+    text-align: center;
+    width: 100%;
+    font-size: 40px;
+    transform: translateY(11vh);
+}
+ul.countdown {
+color:white;
+list-style: none;
+margin: 40px 0 75px 0;
+padding: 0;
+display: block;
+text-align: center;
+}
+ul.countdown li {
+display: inline-block;
+line-height: 3vh;
+}
+ul.countdown li span {
+font-size: 43px;
+font-weight: 300;
+}
+ul.countdown li.seperator {
+font-size: 4vh;
+vertical-align: top;
+}
+ul.countdown li p {
+color: white;
+font-size: 19px;
+}
+a {
+color: white;
+text-decoration: none;
+}
+
+
+/* aarohan */
+
+#mascot{
+    height: 27vh;
+    position: relative;
+    padding-right: 10vw;
+}
+
+#mascot img{
+    height: 27vh;
+    transform: translateX(-31%);
+}
+
+#anim{
+    animation-name: translate;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+}
+
+#anim img{
+    transform: translateX(0);
+}
+#date{
+	font-size: 32px;
+	color:white;
+    letter-spacing: 5px;
+    padding-top: 10px;
+}
+
+#month{
+	font-size: 24px;
+    color: white;
+    padding-top: 4px;
+}
+
+.title {
+padding-top: 6vh;
+z-index: 10;
+left: 50%;
+top: 50%;
+font-family: 'Avenir';
+text-align: center;
+width: 50%;
+margin-left: 25%;
+}
+.title h1 {
+position: relative;
+color: #EEEEEE;
+font-weight: 600;
+font-size: 75px;
+padding: 0;
+margin: 0;
+line-height: 1;
+text-shadow: 0 0 30px #000155;
+}
+.title h1 span {
+font-weight: 600;
+padding: 0;
+margin: 0;
+color: #BBB;
+}
+.title h3 {
+font-weight: 200;
+font-size: 20px;
+padding: 0;
+margin: 0;
+line-height: 1;
+color: #EEEEEE;
+letter-spacing: 2px;
+text-shadow: 0 0 30px #000155;
+}
+
+/* mascot anim */
+@keyframes translate {
+    0%   {transform: translateY(0)}
+    50%  {transform: translateY(-20px)}
+    100% {transform: translateY(0)}
+}
+
+
+/* sponsors */
+.sponsors{
+    margin-bottom: 20vh;
+}
+.sponsors img{
+    width: 70%;
+    height: auto;
+}
+
+#sponsors h1{
+    font-family: Avenir;
+    transform: translateY(2vh);
+    font-size: 5vh;
+    color: white;
+}
+
+
+/* contact us */
+
+#contacttxt{
+    margin-bottom: 20vh;
+}
+
+#contact slide{
+    display: none;
+}
+
+#contact .fp-controlArrow.fp-next{
+    display: none;
+}
+
+#contact .fp-controlArrow.fp-prev{
+    display: none;
+}
+
+
+.contact{
+    z-index: 10;
+    text-align: center;
+    overflow: hidden;
+    background-color: rgba(201, 76, 76, 0);
+    }
+
+    .contact h1{
+        font-family: Avenir;
+        font-size: 5vh;
+        color: white;
+    }
+    
+    .mycard{
+    display: inline-block;
+    margin: 10px;
+    height: 372px;
+    background-color: #f1f1f1;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 250px;
+    -webkit-transition: .1s ease-in-out;
+    transition: .1s ease-in-out;
+    font-family: Avenir,sans-serif;
+    }
+    
+    .mycard:hover{
+        margin-top: -25px;
+        box-shadow: 0 15px 20px rgba(0,0,0,0.1);
+    }
+    
+    .card_Banner{
+    height: 100px;
+    width: inherit;
+    padding-top: 35px;
+    background-color: #FAFAFA;
+    background-size: cover;
+    background-position: center;
+    }
+    
+    .mycard:nth-child(1) .card_Banner{
+        /* ⬇ Photo by Alexandru Acea on Unsplash */
+        background-image: url("https://.unsplash.com/photo-1537192830907-c60714675834?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f9f8ea79c488a95e95d35c10fad79b0d&auto=format&fit=crop&w=934&q=80");
+    }
+    
+    .card_Avatar{
+    transform: translateY(-2vh);
+    height: 200px;
+    width: 200px;
+    margin: auto auto;
+    background-size: cover;
+    background-position: center;
+    background-color: #F1F1F1;
+    border: 3px solid #FFFFFF;
+    border-radius: 100%;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+    }
+    
+    .mycard .one .card_Avatar{
+        background-image: url("../img/members/Sudipto.jpg");
+    }
+    .mycard .two .card_Avatar{
+        background-image: url("../img/members/Ankith.jpg");
+    }
+    .mycard .three .card_Avatar{
+        background-image: url("../img/members/Akshay.jpg");
+    }
+    
+    .mycard h3, a, i{
+    font-family: 'Avenir', sans-serif;
+    font-weight: lighter;
+    -webkit-transition: .1s ease-in-out;
+    transition: .1s ease-in-out;
+    }
+    
+    .mycard h4{
+        font-size: 20px;
+    }
+    .mycard h3{
+        margin-top: 138px;
+        margin-bottom: 5px;
+        font-size: 18px;
+        color: #212121;
+    }
+    
+    .mycard a{
+        display: block;
+        padding: 5px 0px;
+        font-size: 14px;
+        color: #9E9E9E;
+        text-decoration: none;
+    }
+    
+    .mycard	a:hover{
+            background-color: #FAFAFA;
+            color: inherit;
+            cursor: pointer; /* ⬅ For Codepen demo - Not important! */
+        }
+    
+    .mycard ul{
+    margin-top: 10px;
+    padding: 15px 0px;
+    background-color: #FAFAFA;
+    }
+    
+    .mycard	ul a{
+        display: inline;
+        margin-right: 10px;
+    }
+    
+    .mycard	ul a:last-of-type{
+            margin-right: 0px;
+        }
+    
+    .mycard	ul a i{
+            color: inherit;
+        }
+    
+        .mycard	ul a i:hover{
+                transform: scale(1.5);
+                color: inherit;
+            }
+    
+    *::selection{
+    background-color: #CCFF90;
+    }
+
+
+/* loader */
+
+.pageload-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+    background-color: #121536;
+    z-index: 155;
+    }
+    
+    .pageload-overlay.show {
+    display: block;
+    }
+    
+    .pageload-overlay svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    }
+    
+    .pageload-overlay svg path {
+    fill: #fff;
+    }
+    .pagewrap {
+    visibility: hidden;
+    }
+    
+    .papewrap show{
+    visibility: visible;
+    }
+    
+    
+    .pageload-overlay::after,
+    .pageload-overlay::before {
+    content: '';
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin: -10px 0 0 -10px;
+    border-radius: 50%;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1000;
+    -webkit-transition: opacity 0.15s, visibility 0s 0.15s;
+    transition: opacity 0.15s, visibility 0s 0.15s;
+    }
+    
+    .pageload-overlay::after {
+    background-color: #4cfff9;
+    -webkit-transform: translateX(-20px);
+    transform: translateX(-20px);
+    -webkit-animation: moveRight 0.6s linear infinite alternate;
+    animation: moveRight 0.6s linear infinite alternate;
+    }
+    
+    .pageload-overlay::before {
+    background-color: #694FB9;
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px);
+    -webkit-animation: moveLeft 0.6s linear infinite alternate;
+    animation: moveLeft 0.6s linear infinite alternate;
+    }
+    
+    @-webkit-keyframes moveRight {
+    to { -webkit-transform: translateX(20px); }
+    }
+    
+    @keyframes moveRight {
+    to { transform: translateX(20px); }
+    }
+    
+    @-webkit-keyframes moveLeft {
+    to { -webkit-transform: translateX(-20px); }
+    }
+    
+    @keyframes moveLeft {
+    to { transform: translateX(-20px); }
+    }
+    
+    .pageload-loading.pageload-overlay::after,
+    .pageload-loading.pageload-overlay::before {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    }
+
+    /* responsive */
+@media screen and (max-width: 600px) {
+
+/* contact us */
+#contacttxt{
+    margin-bottom: 0;
+    padding-bottom: 13vh;
+    transform: translateY(11vh);
+}
+
+#contact slide{
+    display: block;
+}
+
+.contactbox{
+    display: none;
+}
+
+.mycard{
+    transform: translateY(-18vh);
+}
+
+#contact .fp-controlArrow.fp-next{
+    display: block;
+}
+
+#contact .fp-controlArrow.fp-prev{
+    display: block;
+}
+	
+    
+/* home*/
+	.title {
+        z-index: 10;
+        top: 50%;
+        font-family: 'Avenir';
+        text-align: center;
+        transform: translateY(13vh);
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .title h1{
+        font-size: 0.4em;
+    }
+
+    #date,#month{
+        font-size: 0.2em;
+    }
+
+    #mascot{
+        padding-right: 0;
+        transform: translateY(12vh);
+    }
+
+    #mascot img{
+        transform: translateX(-42vw);
+    }
+
+    #anim img{
+        transform: translateX(-16vw);
+    }
+
+        /* sponsers */
+        #sponsors h1{
+            transform: translateY(11vh);
+        }
+
+    .sponsers img{
+        width: 100vw;
+        margin-left: 0; 
+    }
+    #fp-nav ul li .fp-tooltip.fp-left {
+        display: none;
+    }
+    
+    #fp-nav.fp-left {
+        left: 0;
+    }
+    .fp-controlArrow.fp-next {
+        border-width: 18.5px 0px 18.5px 16px;
+    }
+
+    .fp-controlArrow.fp-prev {
+        border-width: 18.5px 16px 18.5px 0px;
+    }
+	
+	}
+	
+	
