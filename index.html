@@ -16,8 +16,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<script src="flipclock.js"></script>
-	<link rel="stylesheet" href="flipclock.css">
+	<link rel="stylesheet" href="countdowncube.css"/>
+
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -94,49 +94,33 @@
                         ">
                 </div>
 
-                <a href="./arhn2018.html">
+                
                     <div class="title">
                       
                       <h1>Aarohan 2020</h1>
-                      <div id="date"> 07    &nbsp;08    &nbsp;09    &nbsp;10</span></div>
+                      <div id="date"> 06    &nbsp;07    &nbsp;08    &nbsp;09</span></div>
                       <div id="month"> <span>FEBRUARY 2020</span></div>
                     </div>
-                    </a>
+                    
   
   <div class="container">
   <div class="row">
   <div class="col"></div>
   <div class="col-lg-7 col-xs-12 col-sm-12">
-  <div class="clock" style="top: 40%;"></div>
-	<div class="message"></div>
+  <div id="counter" style="padding-top: 116px;"></div>
 	</div>
 	<div class="col"></div>
 	</div>
 	</div>
 
-	<script type="text/javascript">
-		var clock;
-		
-		$(document).ready(function() {
-			var clock;
-
-			clock = $('.clock').FlipClock({
-		        clockFace: 'DailyCounter',
-		        autoStart: false,
-		        callbacks: {
-		        	stop: function() {
-		        		$('.message').html('The clock has stopped!')
-		        	}
-		        }
-		    });
-				  
-			
-		    clock.setTime(2505600);
-		    clock.setCountdown(true);
-		    clock.start();
-
-		});
-	</script>
+	<!--	<script type="text/javascript">
+		$('#counter').countdownCube( {
+  target: '2018-03-01T10:00:00Z',
+  cubeSize: 50,
+  background: 'rgba( 255, 150, 150, 0.8 )',
+  color: 'white',
+} );
+	</script> -->
   
                   
                     
@@ -226,6 +210,85 @@
         </div>
     </div>   
     </div>
-    <script src="js/index.js"></script>         
+    <script src="js/index.js"></script>   
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.14/moment-timezone-with-data-2012-2022.min.js"></script>
+   
+    <script src="countdowncube.js"></script>
+    <script>
+      var targetDate = new Date();
+      targetDate.setMonth(targetDate.getMonth() + 1)
+      targetDate.setDate(7)
+      targetDate.setHours(0)
+      targetDate.setMinutes(0)
+      targetDate.setSeconds(0)
+ 
+
+      var targetDateStringUTC = targetDate.toISOString()
+                                          .replace(':00.000', '');
+      var targetDateString = targetDateStringUTC.replace('Z', '');
+		console.log(targetDateString);
+      var targetLADate = moment.tz(targetDateStringUTC,
+                                   'Asia/Kolkata').format();
+      var tzLAOffset = targetLADate.substr(0);
+      var targetDateStringOffset = targetDateString.replace('Z', '')
+                                       .replace(':00.000', '') +
+                                       tzLAOffset;
+
+      var tzOldFormatOffset = targetDateString.substr(0);
+      var targetDateOldFormatString = targetDate.toLocaleDateString() +
+                                      ' ' + tzOldFormatOffset;
+
+      var pastDate = new Date();
+      pastDate.setMonth(targetDate.getMonth() - 18)
+      pastDate.setMinutes(0);
+      pastDate.setSeconds(0);
+      pastDate.setMilliseconds(0);
+      var targetDateStringPast = pastDate.toISOString()
+                                         .replace(':00.000', '');
+      var nearFutureDate = new Date();
+      nearFutureDate.setSeconds(nearFutureDate.getSeconds() + 10);
+      nearFutureDate.setMilliseconds(0);
+      var nearFutureDateString = nearFutureDate.toISOString()
+
+      $('.example').each(function() {
+        var str = $( this ).html()
+        var newstr = str.replace("{targetDateString}",
+                             targetDateString )
+                    .replace("{targetDateStringUTC}",
+                             targetDateStringUTC )
+                    .replace("{targetDateStringOffset}",
+                             targetDateStringOffset )
+                    .replace("{targetDateOldFormatString}",
+                             targetDateOldFormatString )
+                    .replace("{nearFutureDateString}",
+                             nearFutureDateString )
+                    .replace("{targetDateStringPast}",
+                             targetDateStringPast );
+
+        $( this ).html(newstr);
+      } );
+
+      
+    </script>
+    <script>
+      $('#counter').countdownCube( {
+        target: targetDateStringUTC,
+        cubeSize: 80,
+        background:  'white',
+        color: '#ff000d',
+		targetTimezone: 'Asia/Kolkata',
+		labelsTranslations: {'year': 'Years',
+                             'month': 'Months',
+                             'day': 'Days',
+                             'hour': 'Hours',
+                             'minute': 'Minutes',
+                             'second': 'Seconds'
+                             },
+      } );
+
+      
+    </script>	
 </body>
 </html>
