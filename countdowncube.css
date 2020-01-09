@@ -42,3 +42,20 @@
 .countdownCubeTitleDiv{
 	color: white;
 }
+
+.countdownCubeCube {
+	font-family: Avenir,sans-serif;
+}
+
+.countdownCubeContainer{
+	margin-left: 10px;
+    margin-right: 10px;
+	font-family: Avenir,sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+	.countdownCubeContainer{
+		margin-left: 1px;
+		margin-right: 1px;
+	}
+}
